@@ -8,13 +8,8 @@
 using namespace std;
 using namespace rapidxml;
 
-ExtractValue::ExtractValue(char *a) {
-  ifstream inFile(a,std::ifstream::in);
-  stringstream ss;
-  ss << inFile.rdbuf();
-  inFile.close();
-  string content(ss.str());
-  doc.parse<0>(&content[0]);
+ExtractValue::ExtractValue(std::string a) {
+  docstring = a;
 }
 
 int ExtractValue::chop(std::string b, std::string arr[]) {
@@ -37,11 +32,19 @@ int ExtractValue::chop(std::string b, std::string arr[]) {
 }
 
 int ExtractValue::intreturn(std::string source) {
+  ifstream inFile(docstring.c_str(),std::ifstream::in);
+  stringstream ss;
+  ss << inFile.rdbuf();
+  inFile.close();
+  string content(ss.str());
+  rapidxml::xml_document<> doc;
+  doc.parse<0>(&content[0]);
   string sarray[5];
   int len = chop(source,sarray);
-  snode = doc.first_node("ImgProc");
+  rapidxml::xml_node<> *snode;
+  snode = doc.first_node("PID");
   for (int i = 0 ; i < len ; i++) {
-    snode = snode->first_node();
+    snode = snode->first_node(sarray[i].c_str());
   }
   string pres = snode->value();
   istringstream is(pres);
@@ -51,11 +54,19 @@ int ExtractValue::intreturn(std::string source) {
 }
 
 double ExtractValue::doublereturn(std::string source) {
+  ifstream inFile(docstring.c_str(),std::ifstream::in);
+  stringstream ss;
+  ss << inFile.rdbuf();
+  inFile.close();
+  string content(ss.str());
+  rapidxml::xml_document<> doc;
+  doc.parse<0>(&content[0]);
   string sarray[5];
   int len = chop(source,sarray);
-  snode = doc.first_node("ImgProc");
+  rapidxml::xml_node<> *snode;
+  snode = doc.first_node("PID");
   for (int i = 0 ; i < len ; i++) {
-    snode = snode->first_node();
+    snode = snode->first_node(sarray[i].c_str());
   }
   string pres = snode->value();
   istringstream is(pres);
@@ -65,11 +76,19 @@ double ExtractValue::doublereturn(std::string source) {
 }
 
 float ExtractValue::floatreturn(std::string source) {
+  ifstream inFile(docstring.c_str(),std::ifstream::in);
+  stringstream ss;
+  ss << inFile.rdbuf();
+  inFile.close();
+  string content(ss.str());
+  rapidxml::xml_document<> doc;
+  doc.parse<0>(&content[0]);
   string sarray[5];
   int len = chop(source,sarray);
-  snode = doc.first_node("ImgProc");
+  rapidxml::xml_node<> *snode;
+  snode = doc.first_node("PID");
   for (int i = 0 ; i < len ; i++) {
-    snode = snode->first_node();
+    snode = snode->first_node(sarray[i].c_str());
   }
   string pres = snode->value();
   istringstream is(pres);
@@ -79,11 +98,19 @@ float ExtractValue::floatreturn(std::string source) {
 }
 
 string ExtractValue::stringreturn(std::string source) {
+  ifstream inFile(docstring.c_str(),std::ifstream::in);
+  stringstream ss;
+  ss << inFile.rdbuf();
+  inFile.close();
+  string content(ss.str());
+  rapidxml::xml_document<> doc;
+  doc.parse<0>(&content[0]);
   string sarray[5];
   int len = chop(source,sarray);
-  snode = doc.first_node("ImgProc");
+  rapidxml::xml_node<> *snode;
+  snode = doc.first_node("PID");
   for (int i = 0 ; i < len ; i++)
-    snode = snode->first_node();
+    snode = snode->first_node(sarray[i].c_str());
   string pres = snode->value();
   return pres;
 }
