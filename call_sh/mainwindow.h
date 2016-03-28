@@ -17,6 +17,7 @@ public:
 
 public slots:
     void on_pushButton_2_clicked();
+    void on_checkBox_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;

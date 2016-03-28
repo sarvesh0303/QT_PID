@@ -22,3 +22,15 @@ void MainWindow::on_pushButton_2_clicked()
     QProcess myProcess;
     myProcess.startDetached(comm,args);
 }
+
+void MainWindow::on_checkBox_toggled(bool checked)
+{
+    if(checked)
+    {
+        QString comm = "/bin/sh";
+        QStringList args;
+        args<<"torun.sh";
+        QProcess myProcess;
+        myProcess.startDetached(comm,args);
+    }
+}
