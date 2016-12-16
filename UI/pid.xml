@@ -1,5 +1,27 @@
 <PID>
-    <p>67</p>
-    <i>1.31</i>
-    <d>0.065</d>
+    <p>0</p>
+    <i>0</i>
+    <d>0</d>
+    <switch>1</switch>
+    <j1>
+        <id>0</id>
+        <joint>5</joint>
+        <p>78</p>
+        <goal>2</goal>
+        <time>1</time>
+    </j1>
+    <j2>
+        <id>0</id>
+        <joint>0</joint>
+        <p>0</p>
+        <goal>0</goal>
+        <time>0</time>
+    </j2>
+    <j3>
+        <id>0</id>
+        <joint>0</joint>
+        <p>0</p>
+        <goal>0</goal>
+        <time>0</time>
+    </j3>
 </PID>

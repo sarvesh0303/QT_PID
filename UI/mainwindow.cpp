@@ -4,6 +4,7 @@
 #include <QSpinBox>
 #include <QtXml>
 #include <sstream>
+#include "tuner.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->horizontalSlider->setRange(0,200);
     ui->horizontalSlider_2->setRange(0,200);
     ui->horizontalSlider_3->setRange(0,200);
+    ui->doubleSpinBox_2->setRange(0,200);
+    ui->doubleSpinBox_3->setRange(0,200);
+    ui->doubleSpinBox->setRange(0,200);
+
 }
 
 MainWindow::~MainWindow()
@@ -21,7 +26,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-QString MainWindow::fromdouble(double a) {
+QString fromdouble(double a) {
+    std::stringstream ss;
+    ss << a;
+    QString k = ss.str().c_str();
+    return k;
+
+}
+
+QString fromint(int a) {
     std::stringstream ss;
     ss << a;
     QString k = ss.str().c_str();
@@ -94,3 +107,41 @@ void MainWindow::on_horizontalSlider_valueChanged(int value)
 }
 
 
+
+void MainWindow::on_horizontalSlider_sliderMoved(int position)
+{
+    std::cout << position << std::endl;
+}
+
+void MainWindow::on_ResetButton_toggled(bool checked)
+{
+    QFile ifile("pid.xml");
+    QDomDocument doc;
+    doc.setContent(&ifile);
+    ifile.close();
+    int switcher;
+    QDomElement root = doc.documentElement();
+    QDomElement old_node = root.firstChildElement("switch");
+    QDomElement new_node = doc.createElement("switch");
+    if (checked)
+        switcher = 1;
+    else
+        switcher = 0;
+    QString a = fromint(switcher);
+    new_node.appendChild(doc.createTextNode(a));
+    root.replaceChild(new_node,old_node);
+    QFile ofile("pid.xml");
+    ofile.open(QIODevice::WriteOnly);
+    QTextStream outs;
+    outs.setDevice(&ofile);
+    doc.save(outs,4);
+    ofile.close();
+}
+
+void MainWindow::on_advanced_clicked()
+{
+    hide();
+    tn = new Tuner();
+    tn->show();
+    tn->activateWindow();
+}

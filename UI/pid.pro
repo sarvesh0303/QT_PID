@@ -13,10 +13,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    tuner.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    tuner.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    tuner.ui
 
 QT += xml

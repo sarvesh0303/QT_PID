@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.6
+** Created by: Qt User Interface Compiler version 4.8.7
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -13,6 +13,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QCheckBox>
 #include <QtGui/QDoubleSpinBox>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
@@ -20,6 +21,7 @@
 #include <QtGui/QMenuBar>
 #include <QtGui/QPushButton>
 #include <QtGui/QSlider>
+#include <QtGui/QSpinBox>
 #include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
@@ -41,6 +43,9 @@ public:
     QDoubleSpinBox *doubleSpinBox;
     QDoubleSpinBox *doubleSpinBox_2;
     QDoubleSpinBox *doubleSpinBox_3;
+    QCheckBox *ResetButton;
+    QSpinBox *joint_select;
+    QPushButton *advanced;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -49,7 +54,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(681, 231);
+        MainWindow->resize(681, 307);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         horizontalSlider = new QSlider(centralWidget);
@@ -78,7 +83,7 @@ public:
         pushButton->setGeometry(QRect(540, 10, 99, 27));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(520, 140, 141, 27));
+        pushButton_2->setGeometry(QRect(520, 200, 141, 27));
         doubleSpinBox = new QDoubleSpinBox(centralWidget);
         doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
         doubleSpinBox->setGeometry(QRect(450, 120, 69, 27));
@@ -88,10 +93,19 @@ public:
         doubleSpinBox_3 = new QDoubleSpinBox(centralWidget);
         doubleSpinBox_3->setObjectName(QString::fromUtf8("doubleSpinBox_3"));
         doubleSpinBox_3->setGeometry(QRect(450, 20, 69, 27));
+        ResetButton = new QCheckBox(centralWidget);
+        ResetButton->setObjectName(QString::fromUtf8("ResetButton"));
+        ResetButton->setGeometry(QRect(260, 190, 85, 20));
+        joint_select = new QSpinBox(centralWidget);
+        joint_select->setObjectName(QString::fromUtf8("joint_select"));
+        joint_select->setGeometry(QRect(110, 190, 47, 23));
+        advanced = new QPushButton(centralWidget);
+        advanced->setObjectName(QString::fromUtf8("advanced"));
+        advanced->setGeometry(QRect(360, 190, 121, 22));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 681, 25));
+        menuBar->setGeometry(QRect(0, 0, 681, 19));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -114,6 +128,8 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "          D", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("MainWindow", "Close", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("MainWindow", "Set Values", 0, QApplication::UnicodeUTF8));
+        ResetButton->setText(QApplication::translate("MainWindow", "Reset", 0, QApplication::UnicodeUTF8));
+        advanced->setText(QApplication::translate("MainWindow", "Tuner", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
