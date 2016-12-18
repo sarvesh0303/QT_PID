@@ -14,12 +14,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    tuner.cpp
+    tuner.cpp \
+    pvalues.cpp
 
 HEADERS  += mainwindow.h \
-    tuner.h
+    tuner.h \
+    pvalues.h
 
 FORMS    += mainwindow.ui \
-    tuner.ui
+    tuner.ui \
+    pvalues.ui
 
 QT += xml

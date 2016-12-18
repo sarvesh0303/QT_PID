@@ -24,7 +24,6 @@
     */
 
 
-
 void node_replace(QDomElement old, QString a,QDomDocument* doc) {
     QDomElement upper = old.parentNode().toElement();
     QDomElement newel = doc->createElement(old.tagName());
@@ -80,7 +79,6 @@ void Tuner::on_pushButton_clicked()
     if (ui->checkBox->isChecked()) {
         node_replace(j1.firstChildElement("id"),fromint(1),doc);
         node_replace(j1.firstChildElement("joint"),fromint(ui->spinBox_4->value()),doc);
-        node_replace(j1.firstChildElement("p"),fromint(ui->horizontalSlider->value()),doc);
         node_replace(j1.firstChildElement("goal"),ui->lineEdit->text(),doc);
         node_replace(j1.firstChildElement("time"),ui->lineEdit_4->text(),doc);
     }
@@ -90,7 +88,6 @@ void Tuner::on_pushButton_clicked()
     if (ui->checkBox_2->isChecked()) {
         node_replace(j2.firstChildElement("id"),fromint(1),doc);
         node_replace(j2.firstChildElement("joint"),fromint(ui->spinBox_5->value()),doc);
-        node_replace(j2.firstChildElement("p"),fromint(ui->horizontalSlider_2->value()),doc);
         node_replace(j2.firstChildElement("goal"),ui->lineEdit_2->text(),doc);
         node_replace(j2.firstChildElement("time"),ui->lineEdit_5->text(),doc);
     }
@@ -100,7 +97,6 @@ void Tuner::on_pushButton_clicked()
     if (ui->checkBox_3->isChecked()) {
         node_replace(j3.firstChildElement("id"),fromint(1),doc);
         node_replace(j3.firstChildElement("joint"),fromint(ui->spinBox_6->value()),doc);
-        node_replace(j3.firstChildElement("p"),fromint(ui->horizontalSlider_3->value()),doc);
         node_replace(j3.firstChildElement("goal"),ui->lineEdit_3->text(),doc);
         node_replace(j3.firstChildElement("time"),ui->lineEdit_6->text(),doc);
     }

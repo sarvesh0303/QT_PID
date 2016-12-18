@@ -141,7 +141,7 @@ void MainWindow::on_ResetButton_toggled(bool checked)
 void MainWindow::on_advanced_clicked()
 {
     hide();
-    tn = new Tuner();
-    tn->show();
-    tn->activateWindow();
+    pv = new PValues();
+    pv->show();
+    pv->activateWindow();
 }

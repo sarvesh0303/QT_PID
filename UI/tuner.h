@@ -8,7 +8,7 @@ namespace Ui {
 class Tuner;
 }
 
-void node_replace(QDomElement* old, QString a,QDomDocument* doc);
+void node_replace(QDomElement old, QString a,QDomDocument* doc);
 
 class Tuner : public QWidget
 {

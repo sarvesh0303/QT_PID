@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QMainWindow>
 #include "tuner.h"
+#include "pvalues.h"
 
 namespace Ui {
 class MainWindow;
@@ -44,7 +45,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    Tuner *tn;
+    PValues *pv;
 };
 
 #endif // MAINWINDOW_H

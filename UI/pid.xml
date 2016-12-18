@@ -4,16 +4,14 @@
     <d>0</d>
     <switch>1</switch>
     <j1>
-        <id>0</id>
-        <joint>5</joint>
-        <p>78</p>
-        <goal>2</goal>
-        <time>1</time>
+        <id>1</id>
+        <joint>0</joint>
+        <goal>0.187266</goal>
+        <time>10</time>
     </j1>
     <j2>
         <id>0</id>
         <joint>0</joint>
-        <p>0</p>
         <goal>0</goal>
         <time>0</time>
     </j2>
@@ -24,4 +22,24 @@
         <goal>0</goal>
         <time>0</time>
     </j3>
+    <pval>
+        <j0>30</j0>
+        <j1>66</j1>
+        <j2>10</j2>
+        <j3>76</j3>
+        <j4>26</j4>
+        <j5>21</j5>
+        <j6>18</j6>
+        <j7>26</j7>
+        <j8>48</j8>
+        <j9>30</j9>
+        <j10>70</j10>
+        <j11>49</j11>
+        <j12>12</j12>
+        <j13>91</j13>
+        <j14>48</j14>
+        <j15>93</j15>
+        <j16>23</j16>
+        <j17>63</j17>
+    </pval>
 </PID>
